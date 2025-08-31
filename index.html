@@ -1,9 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- === Minimal, strong SEO (EN) === -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Download YouTube Thumbnail in HD (maxres) | TubeShot</title>
+  <meta name="description" content="TubeShot.click is a fast online tool to download YouTube video thumbnails and channel icons in maximum quality (maxres). Free and no sign-up.">
+  <link rel="canonical" href="https://www.tubeshot.click/">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TubeShot — YouTube Thumbnail Downloader">
+  <meta property="og:description" content="TubeShot.click is a fast online tool to download YouTube video thumbnails and channel icons in maximum quality (maxres). Free and no sign-up.">
+  <meta property="og:url" content="https://www.tubeshot.click/">
+  <meta property="og:image" content="https://www.tubeshot.click/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Speed -->
+  <link rel="preconnect" href="https://img.youtube.com" crossorigin>
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+
+  <!-- Icons (ensure these files exist in your repo root) -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- JSON-LD: Software Application -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"TubeShot",
+    "url":"https://www.tubeshot.click/",
+    "applicationCategory":"Utility",
+    "operatingSystem":"Web",
+    "description":"Online tool to download YouTube thumbnails (maxres) and channel icons in the highest available quality.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ (for rich results) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Can I download a YouTube thumbnail in the highest quality?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes. TubeShot tries maxresdefault.jpg first and falls back to sd/hq/mq if maxres is not available."}
+      },
+      {
+        "@type":"Question",
+        "name":"Which link formats are supported?",
+        "acceptedAnswer":{"@type":"Answer","text":"watch?v=ID, youtu.be/ID, shorts/ID, embed/ID — you can also paste the raw video ID."}
+      }
+    ]
+  }
+  </script>
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YouTube Thumbnail Downloader</title>
+  <title>Download YouTube Thumbnail in HD (maxres) | TubeShot</title>
   <style>
     body {
       font-family: Arial, sans-serif;
