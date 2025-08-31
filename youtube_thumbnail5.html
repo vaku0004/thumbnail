@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Thumbnail Downloader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ea2a33;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c5232b;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>YouTube Thumbnail Downloader</h1>
+    <p>Paste a YouTube video link and the thumbnail will download automatically.</p>
+    <input type="text" id="youtube-link" placeholder="Paste YouTube Link Here" />
+    <button onclick="downloadThumbnail()">Download Thumbnail</button>
+  </div>
+
+  <script>
+    function extractVideoID(url) {
+      try {
+        if (url.includes("v=")) {
+          return new URL(url).searchParams.get("v");
+        } else if (url.includes("youtu.be/")) {
+          return url.split("youtu.be/")[1].split(/[?&]/)[0];
+        } else {
+          return url.trim();
+        }
+      } catch {
+        return url.trim();
+      }
+    }
+
+    async function downloadImage(imageUrl, filename) {
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    async function downloadThumbnail() {
+      const input = document.getElementById("youtube-link").value.trim();
+      const videoID = extractVideoID(input);
+      if (!videoID) return;
+
+      const maxres = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
+      const hq = `https://img.youtube.com/vi/${videoID}/hqdefault.jpg`;
+
+      try {
+        const test = await fetch(maxres, { method: "HEAD" });
+        const url = test.ok ? maxres : hq;
+        await downloadImage(url, `${videoID}.jpg`);
+      } catch (err) {
+        alert("❌ Failed to download thumbnail.");
+      }
+    }
+  </script>
+</body>
+</html>
