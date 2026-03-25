@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YCL1673W22"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YCL1673W22');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCL1673W22"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YCL1673W22');
+  </script>
 
   <meta name="google-site-verification" content="mB7FZbq3ouj3EkzVcm211djb8WzQWgJQNYPTSAOrZPo" />
-  <!-- === Minimal, strong SEO (EN) === -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Download YouTube Thumbnail in HD (maxres) | TubeShot</title>
@@ -20,60 +17,6 @@
   <link rel="canonical" href="https://www.tubeshot.click/">
   <meta name="robots" content="index,follow">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="TubeShot — YouTube Thumbnail Downloader">
-  <meta property="og:description" content="TubeShot.click is a fast online tool to download YouTube video thumbnails and channel icons in maximum quality (maxres). Free and no sign-up.">
-  <meta property="og:url" content="https://www.tubeshot.click/">
-  <meta property="og:image" content="https://www.tubeshot.click/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Speed -->
-  <link rel="preconnect" href="https://img.youtube.com" crossorigin>
-  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
-
-  <!-- Icons (ensure these files exist in your repo root) -->
-  <link rel="icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <!-- JSON-LD: Software Application -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"TubeShot",
-    "url":"https://www.tubeshot.click/",
-    "applicationCategory":"Utility",
-    "operatingSystem":"Web",
-    "description":"Online tool to download YouTube thumbnails (maxres) and channel icons in the highest available quality.",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
-  }
-  </script>
-
-  <!-- JSON-LD: FAQ (for rich results) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Can I download a YouTube thumbnail in the highest quality?",
-        "acceptedAnswer":{"@type":"Answer","text":"Yes. TubeShot tries maxresdefault.jpg first and falls back to sd/hq/mq if maxres is not available."}
-      },
-      {
-        "@type":"Question",
-        "name":"Which link formats are supported?",
-        "acceptedAnswer":{"@type":"Answer","text":"watch?v=ID, youtu.be/ID, shorts/ID, embed/ID — you can also paste the raw video ID."}
-      }
-    ]
-  }
-  </script>
-
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Download YouTube Thumbnail in HD (maxres) | TubeShot</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -81,9 +24,16 @@
       margin: 0;
       padding: 0;
       display: flex;
+      flex-direction: column; /* Изменено: теперь контент идет друг за другом */
+      align-items: center;
+      min-height: 100vh; /* Изменено: разрешаем странице расти вниз */
+    }
+    .hero-section {
+      display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      width: 100%;
+      padding: 60px 20px; /* Отступы для карточки */
     }
     .card {
       background-color: #fff;
@@ -94,15 +44,8 @@
       max-width: 400px;
       text-align: center;
     }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    p {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
+    h1 { font-size: 24px; margin-bottom: 10px; }
+    p { color: #666; font-size: 14px; margin-bottom: 20px; }
     input {
       width: 100%;
       padding: 12px;
@@ -122,23 +65,32 @@
       font-size: 16px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #c5232b;
+    button:hover { background-color: #c5232b; }
+    
+    section.seo-text {
+      max-width: 800px;
+      width: 100%;
+      padding: 40px 20px;
+      color: #333;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>YouTube Thumbnail Downloader</h1>
-    <p>Paste a YouTube video link and the thumbnail will download automatically.</p>
-    <input type="text" id="youtube-link" placeholder="Paste YouTube Link Here" />
-    <button onclick="downloadThumbnail()">Download Thumbnail</button>
+
+  <div class="hero-section">
+    <div class="card">
+      <h1>YouTube Thumbnail Downloader</h1>
+      <p>Paste a YouTube video link and the thumbnail will download automatically.</p>
+      <input type="text" id="youtube-link" placeholder="Paste YouTube Link Here" />
+      <button onclick="downloadThumbnail()">Download Thumbnail</button>
+    </div>
   </div>
-<section style="max-width: 800px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+
+  <section class="seo-text">
     <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 40px;">
-    
     <h2 style="font-size: 28px; text-align: center; margin-bottom: 20px;">Download High-Quality YouTube Thumbnails</h2>
-    <p>TubeShot is the fastest way to save YouTube video covers in the best possible resolution. Our tool automatically detects the <strong>maxresdefault (1080p)</strong> version of any thumbnail, ensuring you get crisp and clear images every time.</p>
+    <p>TubeShot is the fastest way to save YouTube video covers in the best possible resolution. Our tool automatically detects the <strong>maxresdefault (1080p)</strong> version of any thumbnail.</p>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
         <div>
@@ -151,34 +103,22 @@
         </div>
         <div>
             <h3 style="font-size: 18px; color: #ea2a33;">📱 All Devices</h3>
-            <p style="font-size: 14px; color: #666;">Works perfectly on mobile, tablets, and desktops. Save thumbnails on the go.</p>
+            <p style="font-size: 14px; color: #666;">Works perfectly on mobile, tablets, and desktops.</p>
         </div>
     </div>
+  </section>
 
-    <h2 style="font-size: 22px; margin-top: 40px;">How to grab a YouTube thumbnail?</h2>
-    <ol style="color: #555;">
-        <li>Copy the URL of the YouTube video you want.</li>
-        <li>Paste the link into the input field above.</li>
-        <li>Your browser will automatically prompt you to save the high-resolution JPG image.</li>
-    </ol>
-</section>
-
-<footer style="text-align: center; padding: 40px; color: #999; font-size: 13px;">
+  <footer style="text-align: center; padding: 40px; color: #999; font-size: 13px;">
     &copy; 2026 TubeShot — Simple YouTube Tool.
-</footer>
+  </footer>
+
   <script>
     function extractVideoID(url) {
       try {
-        if (url.includes("v=")) {
-          return new URL(url).searchParams.get("v");
-        } else if (url.includes("youtu.be/")) {
-          return url.split("youtu.be/")[1].split(/[?&]/)[0];
-        } else {
-          return url.trim();
-        }
-      } catch {
+        if (url.includes("v=")) return new URL(url).searchParams.get("v");
+        if (url.includes("youtu.be/")) return url.split("youtu.be/")[1].split(/[?&]/)[0];
         return url.trim();
-      }
+      } catch { return url.trim(); }
     }
 
     async function downloadImage(imageUrl, filename) {
@@ -196,17 +136,13 @@
       const input = document.getElementById("youtube-link").value.trim();
       const videoID = extractVideoID(input);
       if (!videoID) return;
-
       const maxres = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
       const hq = `https://img.youtube.com/vi/${videoID}/hqdefault.jpg`;
-
       try {
         const test = await fetch(maxres, { method: "HEAD" });
         const url = test.ok ? maxres : hq;
         await downloadImage(url, `${videoID}.jpg`);
-      } catch (err) {
-        alert("❌ Failed to download thumbnail.");
-      }
+      } catch (err) { alert("❌ Failed to download thumbnail."); }
     }
   </script>
 </body>
